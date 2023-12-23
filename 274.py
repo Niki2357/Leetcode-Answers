@@ -3,7 +3,6 @@ from typing import List
 
 class Solution:
     def hIndex(self, citations: List[int]) -> int:
-        citations.sort()
         print(citations)
         h = len(citations)
         while h>0:
@@ -23,5 +22,5 @@ class Solution:
         
         
 s = Solution()
-citations = [1,3,1]
+citations = [3,0,6,1,5]
 print(s.hIndex(citations))

@@ -2,7 +2,7 @@ class Solution:
     def isPalindrome(self, s: str) -> bool:
         s = s.lower()
         for letter in s:
-            if ord(letter) not in range(97,122):
+            if ord(letter) not in range(97,122) and ord(letter) not in range(48,58):
                 s = s.replace(letter,'')
 
         print(s)
@@ -20,6 +20,3 @@ solution = Solution()
 s = '0P'
 answer = solution.isPalindrome(s)
 print(answer)
-
-
-# 这题不对劲 leetcode给的答案里，s='0P'的情况expected output是false，这个难道不应该是true嘛

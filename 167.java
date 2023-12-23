@@ -11,17 +11,19 @@ class Solution {
         int index1 = 0;
         int index2;
         int[] result = new int[2];
-        while (index1 < numbers.length){
+        while (index1 < numbers.length - 1){
             index2 = index1 + 1;
             if (index1 == 0 || numbers[index1] != numbers[index1 - 1]){
                 while (index2 < numbers.length){
                     if (numbers[index1] + numbers[index2] == target){
                         result[0] = index1 + 1;
                         result[1] = index2 + 1;
+                        return result;
+                    } else if (numbers[index1] + numbers[index2] > target) {
                         break;
-                    } else {
-                        index2++;
                     }
+                    index2++;
+                    
                 }
             }
             index1 += 1;

@@ -7,18 +7,19 @@ class Solution:
         col = 0
         # check row:
         for row in range(0,9):
-            checkRow = {1:0,2:0,3:0,4:0,5:0,6:0,7:0,8:0,9:0}
+            checkRow = {}
             for col in range(0,9):
                 if board[row][col] != '.':
                     # print('here',board[row][col])
                     key = board[row][col]
+                    print(checkRow)
                     if key in checkRow:
                         return False
                     else:
                         checkRow[key] = 1
         # check col:
         for col in range(0,9):
-            checkCol = {1:0,2:0,3:0,4:0,5:0,6:0,7:0,8:0,9:0}
+            checkCol = {}
             for row in range(0,9):
                 if board[row][col] != '.':
                     # print('by col',board[row][col])
@@ -32,7 +33,7 @@ class Solution:
             print("row", row)
             for col in range(0,9,3):
                 print("col", col)
-                checkSqr = {1:0,2:0,3:0,4:0,5:0,6:0,7:0,8:0,9:0}
+                checkSqr = {}
                 for i in range(0,3):
                     for j in range(0,3):
                         if board[row+i][col+j] != '.':

@@ -4,16 +4,20 @@ from ast import List
 
 class Solution:
     def twoSum(self, numbers: List[int], target: int) -> List[int]:
+        result = [0,0]
         index1 = 0
-        while (index1 < len(numbers)):
+        length = len(numbers)
+        while index1 < length - 1:
             index2 = index1 + 1
             if index1 == 0 or numbers[index1] != numbers[index1 - 1]:
-                while (index2 < len(numbers)):
+                while index2 < length:
                     if numbers[index1] + numbers[index2] == target:
-                        result = [index1 + 1, index2 + 1]
+                        result[0] = index1 + 1
+                        result[1] = index2 + 1
+                        return result
+                    elif numbers[index1] + numbers[index2] > target:
                         break
-                    else:
-                        index2 += 1
+                    index2 += 1
             index1 += 1
         return result
 

@@ -1,3 +1,6 @@
+from typing import List
+
+
 class Solution(object):
     def maxProfit(self, prices):
         max_profit = 0
@@ -15,6 +18,20 @@ class Solution(object):
         return max_profit
         
         
+        
+class Solution:
+    def maxProfit(self, prices: List[int]) -> int:
+        maxProfit = 0
+        buy = 0
+        sell = 1
+        while sell < len(prices):
+            if prices[buy] < prices[sell]:
+                maxProfit = max(maxProfit, prices[sell] - prices[buy])
+            else:
+                buy = sell
+            sell += 1
+        return maxProfit
+
         
         
 solution = Solution()

@@ -4,16 +4,12 @@ from typing import List
 class Solution:
     def canJump(self, nums: List[int]) -> bool:
         index = len(nums) - 1
-        # output = True
         index2 = index
         while index2 >= 0:
-
             if nums[index2] + index2 >= index:
                 print(nums[index2], " can be reached by ", nums[index2],"+" ,index2)
                 index = index2
-            index2 -= 1
-
-            
+            index2 -= 1 
         return True if (index == 0) else False
 
 
